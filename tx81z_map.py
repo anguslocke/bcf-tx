@@ -22,11 +22,12 @@ class GROUP(object):
     REMOTE = 0b0010011  # For effectively pushing front panel buttons
 
 class TX81Z_Param(object):
-    def __init__(self, group, parameter, min, max, name, center=None):
+    def __init__(self, group, parameter, vmin, vmax, name, center=None):
         self.group = group
         self.parameter = parameter
-        self.min = min
-        self.max = max
+        self.min = vmin
+        self.max = vmax
+        self.resolution = min(96, vmax - vmin)
         self.center = center
         self.name = name
 
@@ -57,7 +58,8 @@ class OperatorParams(object):
         self.name = 'OP{}'.format(operator)
         n = self.name + ' '
         # Normal voice parameters group
-        p = (4 - operator) * 13
+        # For some reason, the operators seem to be 4, 2, 3, 1?
+        p = [39, 13, 26, 0][operator - 1]
         self.AR  = VCED_Param(p + 0, 0, 31, n + 'Attack Rate')
         self.D1R = VCED_Param(p + 1, 0, 31, n + 'Decay 1 Rate')
         self.D2R = VCED_Param(p + 2, 0, 31, n + 'Decay 2 Rate')
@@ -72,7 +74,8 @@ class OperatorParams(object):
         self.CRS = VCED_Param(p +11, 0, 63, n + 'Coarse Freq')
         self.DET = VCED_Param(p +12, 0,  6, n + 'Detune', 3)
         # Additional voice parameters
-        p = (4 - operator) * 5
+        # Ditto to above - 2 and 3 are swapped?
+        p = [15, 5, 10, 0][operator - 1]
         self.FIX       = ACED_Param(p + 0, 0, 1, n + 'Ratio/Fixed')
         self.FIX_RANGE = ACED_Param(p + 1, 0, 7, n + 'Fixed Range')
         self.FIN       = ACED_Param(p + 2, 0, 15, n + 'Fine Freq')
