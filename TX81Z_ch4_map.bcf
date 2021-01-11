@@ -1,0 +1,753 @@
+$rev F1 ; Firmware 1.10; BC Manager 4.1.1
+$global
+  .midimode U-1
+  .startup last
+  .footsw auto
+  .rxch off
+  .txinterval 100
+  .deadtime 100
+$preset
+  .name 'Page 1                  '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$encoder 1 ;OP1 Attack Rate
+  .showvalue on
+  .minmax 0 31
+  .tx $F0 $43 $13 $12 $27 val $F7
+  .mode 1dot
+  .resolution 31 31 31 31
+$encoder 2 ;OP1 Decay 1 Rate
+  .showvalue on
+  .minmax 0 31
+  .tx $F0 $43 $13 $12 $28 val $F7
+  .mode 1dot
+  .resolution 31 31 31 31
+$encoder 3 ;OP1 Decay 2 Rate
+  .showvalue on
+  .minmax 0 31
+  .tx $F0 $43 $13 $12 $29 val $F7
+  .mode 1dot
+  .resolution 31 31 31 31
+$encoder 4 ;OP1 Release Rate
+  .showvalue on
+  .minmax 1 15
+  .tx $F0 $43 $13 $12 $2A val $F7
+  .mode 1dot
+  .resolution 14 14 14 14
+$encoder 6 ;OP1 Waveform
+  .showvalue on
+  .minmax 0 7
+  .tx $F0 $43 $13 $13 $12 val $F7
+  .mode 1dot
+  .resolution 7 7 7 7
+$encoder 7 ;OP1 Coarse Freq
+  .showvalue on
+  .minmax 0 63
+  .tx $F0 $43 $13 $12 $32 val $F7
+  .mode 1dot
+  .resolution 63 63 63 63
+$encoder 8 ;OP1 Fine Freq
+  .showvalue on
+  .minmax 0 15
+  .tx $F0 $43 $13 $13 $11 val $F7
+  .mode 1dot
+  .resolution 15 15 15 15
+$encoder 9 ;OP2 Attack Rate
+  .showvalue on
+  .minmax 0 31
+  .tx $F0 $43 $13 $12 $0D val $F7
+  .mode 1dot
+  .resolution 31 31 31 31
+$encoder 10 ;OP2 Decay 1 Rate
+  .showvalue on
+  .minmax 0 31
+  .tx $F0 $43 $13 $12 $0E val $F7
+  .mode 1dot
+  .resolution 31 31 31 31
+$encoder 11 ;OP2 Decay 2 Rate
+  .showvalue on
+  .minmax 0 31
+  .tx $F0 $43 $13 $12 $0F val $F7
+  .mode 1dot
+  .resolution 31 31 31 31
+$encoder 12 ;OP2 Release Rate
+  .showvalue on
+  .minmax 1 15
+  .tx $F0 $43 $13 $12 $10 val $F7
+  .mode 1dot
+  .resolution 14 14 14 14
+$encoder 14 ;OP2 Waveform
+  .showvalue on
+  .minmax 0 7
+  .tx $F0 $43 $13 $13 $08 val $F7
+  .mode 1dot
+  .resolution 7 7 7 7
+$encoder 15 ;OP2 Coarse Freq
+  .showvalue on
+  .minmax 0 63
+  .tx $F0 $43 $13 $12 $18 val $F7
+  .mode 1dot
+  .resolution 63 63 63 63
+$encoder 16 ;OP2 Fine Freq
+  .showvalue on
+  .minmax 0 15
+  .tx $F0 $43 $13 $13 $07 val $F7
+  .mode 1dot
+  .resolution 15 15 15 15
+$encoder 17 ;OP3 Attack Rate
+  .showvalue on
+  .minmax 0 31
+  .tx $F0 $43 $13 $12 $1A val $F7
+  .mode 1dot
+  .resolution 31 31 31 31
+$encoder 18 ;OP3 Decay 1 Rate
+  .showvalue on
+  .minmax 0 31
+  .tx $F0 $43 $13 $12 $1B val $F7
+  .mode 1dot
+  .resolution 31 31 31 31
+$encoder 19 ;OP3 Decay 2 Rate
+  .showvalue on
+  .minmax 0 31
+  .tx $F0 $43 $13 $12 $1C val $F7
+  .mode 1dot
+  .resolution 31 31 31 31
+$encoder 20 ;OP3 Release Rate
+  .showvalue on
+  .minmax 1 15
+  .tx $F0 $43 $13 $12 $1D val $F7
+  .mode 1dot
+  .resolution 14 14 14 14
+$encoder 22 ;OP3 Waveform
+  .showvalue on
+  .minmax 0 7
+  .tx $F0 $43 $13 $13 $0D val $F7
+  .mode 1dot
+  .resolution 7 7 7 7
+$encoder 23 ;OP3 Coarse Freq
+  .showvalue on
+  .minmax 0 63
+  .tx $F0 $43 $13 $12 $25 val $F7
+  .mode 1dot
+  .resolution 63 63 63 63
+$encoder 24 ;OP3 Fine Freq
+  .showvalue on
+  .minmax 0 15
+  .tx $F0 $43 $13 $13 $0C val $F7
+  .mode 1dot
+  .resolution 15 15 15 15
+$encoder 25 ;OP4 Attack Rate
+  .showvalue on
+  .minmax 0 31
+  .tx $F0 $43 $13 $12 $00 val $F7
+  .mode 1dot
+  .resolution 31 31 31 31
+$encoder 26 ;OP4 Decay 1 Rate
+  .showvalue on
+  .minmax 0 31
+  .tx $F0 $43 $13 $12 $01 val $F7
+  .mode 1dot
+  .resolution 31 31 31 31
+$encoder 27 ;OP4 Decay 2 Rate
+  .showvalue on
+  .minmax 0 31
+  .tx $F0 $43 $13 $12 $02 val $F7
+  .mode 1dot
+  .resolution 31 31 31 31
+$encoder 28 ;OP4 Release Rate
+  .showvalue on
+  .minmax 1 15
+  .tx $F0 $43 $13 $12 $03 val $F7
+  .mode 1dot
+  .resolution 14 14 14 14
+$encoder 30 ;OP4 Waveform
+  .showvalue on
+  .minmax 0 7
+  .tx $F0 $43 $13 $13 $03 val $F7
+  .mode 1dot
+  .resolution 7 7 7 7
+$encoder 31 ;OP4 Coarse Freq
+  .showvalue on
+  .minmax 0 63
+  .tx $F0 $43 $13 $12 $0B val $F7
+  .mode 1dot
+  .resolution 63 63 63 63
+$encoder 32 ;OP4 Fine Freq
+  .showvalue on
+  .minmax 0 15
+  .tx $F0 $43 $13 $13 $02 val $F7
+  .mode 1dot
+  .resolution 15 15 15 15
+$fader 1 ;OP1 Decay 1 Level
+  .showvalue on
+  .minmax 0 15
+  .tx $F0 $43 $13 $12 $2B val $F7
+  .motor on
+  .override move
+  .keyoverride off
+$fader 2 ;OP2 Decay 1 Level
+  .showvalue on
+  .minmax 0 15
+  .tx $F0 $43 $13 $12 $11 val $F7
+  .motor on
+  .override move
+  .keyoverride off
+$fader 3 ;OP3 Decay 1 Level
+  .showvalue on
+  .minmax 0 15
+  .tx $F0 $43 $13 $12 $1E val $F7
+  .motor on
+  .override move
+  .keyoverride off
+$fader 4 ;OP4 Decay 1 Level
+  .showvalue on
+  .minmax 0 15
+  .tx $F0 $43 $13 $12 $04 val $F7
+  .motor on
+  .override move
+  .keyoverride off
+$fader 5 ;OP1 Output Level
+  .showvalue on
+  .minmax 0 99
+  .tx $F0 $43 $13 $12 $31 val $F7
+  .motor on
+  .override move
+  .keyoverride off
+$fader 6 ;OP2 Output Level
+  .showvalue on
+  .minmax 0 99
+  .tx $F0 $43 $13 $12 $17 val $F7
+  .motor on
+  .override move
+  .keyoverride off
+$fader 7 ;OP3 Output Level
+  .showvalue on
+  .minmax 0 99
+  .tx $F0 $43 $13 $12 $24 val $F7
+  .motor on
+  .override move
+  .keyoverride off
+$fader 8 ;OP4 Output Level
+  .showvalue on
+  .minmax 0 99
+  .tx $F0 $43 $13 $12 $0A val $F7
+  .motor on
+  .override move
+  .keyoverride off
+$store 1
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 2
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 3
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 4
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 5
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 6
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 7
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 8
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 9
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 10
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 11
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 12
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 13
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 14
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 15
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 16
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 17
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 18
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 19
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 20
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 21
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 22
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 23
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 24
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 25
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 26
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 27
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 28
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 29
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 30
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 31
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 32
+$preset
+  .name 'Page 1                  '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$encoder 1 ;OP1 Attack Rate
+  .showvalue on
+  .minmax 0 31
+  .tx $F0 $43 $13 $12 $27 val $F7
+  .mode 1dot
+  .resolution 31 31 31 31
+$encoder 2 ;OP1 Decay 1 Rate
+  .showvalue on
+  .minmax 0 31
+  .tx $F0 $43 $13 $12 $28 val $F7
+  .mode 1dot
+  .resolution 31 31 31 31
+$encoder 3 ;OP1 Decay 2 Rate
+  .showvalue on
+  .minmax 0 31
+  .tx $F0 $43 $13 $12 $29 val $F7
+  .mode 1dot
+  .resolution 31 31 31 31
+$encoder 4 ;OP1 Release Rate
+  .showvalue on
+  .minmax 1 15
+  .tx $F0 $43 $13 $12 $2A val $F7
+  .mode 1dot
+  .resolution 14 14 14 14
+$encoder 6 ;OP1 Waveform
+  .showvalue on
+  .minmax 0 7
+  .tx $F0 $43 $13 $13 $12 val $F7
+  .mode 1dot
+  .resolution 7 7 7 7
+$encoder 7 ;OP1 Coarse Freq
+  .showvalue on
+  .minmax 0 63
+  .tx $F0 $43 $13 $12 $32 val $F7
+  .mode 1dot
+  .resolution 63 63 63 63
+$encoder 8 ;OP1 Fine Freq
+  .showvalue on
+  .minmax 0 15
+  .tx $F0 $43 $13 $13 $11 val $F7
+  .mode 1dot
+  .resolution 15 15 15 15
+$encoder 9 ;OP2 Attack Rate
+  .showvalue on
+  .minmax 0 31
+  .tx $F0 $43 $13 $12 $0D val $F7
+  .mode 1dot
+  .resolution 31 31 31 31
+$encoder 10 ;OP2 Decay 1 Rate
+  .showvalue on
+  .minmax 0 31
+  .tx $F0 $43 $13 $12 $0E val $F7
+  .mode 1dot
+  .resolution 31 31 31 31
+$encoder 11 ;OP2 Decay 2 Rate
+  .showvalue on
+  .minmax 0 31
+  .tx $F0 $43 $13 $12 $0F val $F7
+  .mode 1dot
+  .resolution 31 31 31 31
+$encoder 12 ;OP2 Release Rate
+  .showvalue on
+  .minmax 1 15
+  .tx $F0 $43 $13 $12 $10 val $F7
+  .mode 1dot
+  .resolution 14 14 14 14
+$encoder 14 ;OP2 Waveform
+  .showvalue on
+  .minmax 0 7
+  .tx $F0 $43 $13 $13 $08 val $F7
+  .mode 1dot
+  .resolution 7 7 7 7
+$encoder 15 ;OP2 Coarse Freq
+  .showvalue on
+  .minmax 0 63
+  .tx $F0 $43 $13 $12 $18 val $F7
+  .mode 1dot
+  .resolution 63 63 63 63
+$encoder 16 ;OP2 Fine Freq
+  .showvalue on
+  .minmax 0 15
+  .tx $F0 $43 $13 $13 $07 val $F7
+  .mode 1dot
+  .resolution 15 15 15 15
+$encoder 17 ;OP3 Attack Rate
+  .showvalue on
+  .minmax 0 31
+  .tx $F0 $43 $13 $12 $1A val $F7
+  .mode 1dot
+  .resolution 31 31 31 31
+$encoder 18 ;OP3 Decay 1 Rate
+  .showvalue on
+  .minmax 0 31
+  .tx $F0 $43 $13 $12 $1B val $F7
+  .mode 1dot
+  .resolution 31 31 31 31
+$encoder 19 ;OP3 Decay 2 Rate
+  .showvalue on
+  .minmax 0 31
+  .tx $F0 $43 $13 $12 $1C val $F7
+  .mode 1dot
+  .resolution 31 31 31 31
+$encoder 20 ;OP3 Release Rate
+  .showvalue on
+  .minmax 1 15
+  .tx $F0 $43 $13 $12 $1D val $F7
+  .mode 1dot
+  .resolution 14 14 14 14
+$encoder 22 ;OP3 Waveform
+  .showvalue on
+  .minmax 0 7
+  .tx $F0 $43 $13 $13 $0D val $F7
+  .mode 1dot
+  .resolution 7 7 7 7
+$encoder 23 ;OP3 Coarse Freq
+  .showvalue on
+  .minmax 0 63
+  .tx $F0 $43 $13 $12 $25 val $F7
+  .mode 1dot
+  .resolution 63 63 63 63
+$encoder 24 ;OP3 Fine Freq
+  .showvalue on
+  .minmax 0 15
+  .tx $F0 $43 $13 $13 $0C val $F7
+  .mode 1dot
+  .resolution 15 15 15 15
+$encoder 25 ;OP4 Attack Rate
+  .showvalue on
+  .minmax 0 31
+  .tx $F0 $43 $13 $12 $00 val $F7
+  .mode 1dot
+  .resolution 31 31 31 31
+$encoder 26 ;OP4 Decay 1 Rate
+  .showvalue on
+  .minmax 0 31
+  .tx $F0 $43 $13 $12 $01 val $F7
+  .mode 1dot
+  .resolution 31 31 31 31
+$encoder 27 ;OP4 Decay 2 Rate
+  .showvalue on
+  .minmax 0 31
+  .tx $F0 $43 $13 $12 $02 val $F7
+  .mode 1dot
+  .resolution 31 31 31 31
+$encoder 28 ;OP4 Release Rate
+  .showvalue on
+  .minmax 1 15
+  .tx $F0 $43 $13 $12 $03 val $F7
+  .mode 1dot
+  .resolution 14 14 14 14
+$encoder 30 ;OP4 Waveform
+  .showvalue on
+  .minmax 0 7
+  .tx $F0 $43 $13 $13 $03 val $F7
+  .mode 1dot
+  .resolution 7 7 7 7
+$encoder 31 ;OP4 Coarse Freq
+  .showvalue on
+  .minmax 0 63
+  .tx $F0 $43 $13 $12 $0B val $F7
+  .mode 1dot
+  .resolution 63 63 63 63
+$encoder 32 ;OP4 Fine Freq
+  .showvalue on
+  .minmax 0 15
+  .tx $F0 $43 $13 $13 $02 val $F7
+  .mode 1dot
+  .resolution 15 15 15 15
+$fader 1 ;OP1 Decay 1 Level
+  .showvalue on
+  .minmax 0 15
+  .tx $F0 $43 $13 $12 $2B val $F7
+  .motor on
+  .override move
+  .keyoverride off
+$fader 2 ;OP2 Decay 1 Level
+  .showvalue on
+  .minmax 0 15
+  .tx $F0 $43 $13 $12 $11 val $F7
+  .motor on
+  .override move
+  .keyoverride off
+$fader 3 ;OP3 Decay 1 Level
+  .showvalue on
+  .minmax 0 15
+  .tx $F0 $43 $13 $12 $1E val $F7
+  .motor on
+  .override move
+  .keyoverride off
+$fader 4 ;OP4 Decay 1 Level
+  .showvalue on
+  .minmax 0 15
+  .tx $F0 $43 $13 $12 $04 val $F7
+  .motor on
+  .override move
+  .keyoverride off
+$fader 5 ;OP1 Output Level
+  .showvalue on
+  .minmax 0 99
+  .tx $F0 $43 $13 $12 $31 val $F7
+  .motor on
+  .override move
+  .keyoverride off
+$fader 6 ;OP2 Output Level
+  .showvalue on
+  .minmax 0 99
+  .tx $F0 $43 $13 $12 $17 val $F7
+  .motor on
+  .override move
+  .keyoverride off
+$fader 7 ;OP3 Output Level
+  .showvalue on
+  .minmax 0 99
+  .tx $F0 $43 $13 $12 $24 val $F7
+  .motor on
+  .override move
+  .keyoverride off
+$fader 8 ;OP4 Output Level
+  .showvalue on
+  .minmax 0 99
+  .tx $F0 $43 $13 $12 $0A val $F7
+  .motor on
+  .override move
+  .keyoverride off
+$end
