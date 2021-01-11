@@ -1,0 +1,383 @@
+$rev F1 ; Firmware 1.10; BC Manager 4.1.1
+$global
+  .midimode U-3
+  .startup last
+  .footsw auto
+  .rxch off
+  .txinterval 20
+  .deadtime 100
+$preset
+  .name 'example #1              '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$encoder 1 ;A knob #1
+  .showvalue on
+  .mode 1dot
+  .resolution 96 96 96 96
+  .minmax 0 127
+  .tx $F0 val $F7
+$encoder 2 ;A knob #2
+  .showvalue off
+  .mode pan
+  .resolution 96 96 96 96
+  .minmax 0 63
+  .tx $F0 val $F7
+$encoder 9 ;A knob group 2 #1
+  .showvalue off
+  .mode 1dot/off
+  .resolution 96 96 96 96
+  .minmax 0 63
+  .tx $F0 val $F7
+$button 1 ;A button #1
+  .showvalue off
+  .mode toggle
+  .minmax 0 1
+  .tx $F0 val $F7
+$button 2 ;A button #2
+  .showvalue off
+  .mode down
+  .minmax 0 0
+  .tx $F0 val $F7
+$fader 1 ;A fader #1
+  .showvalue off
+  .motor on
+  .override move
+  .keyoverride off
+  .minmax 0 127
+  .tx $F0 val $F7
+$fader 2 ;A fader #2
+  .showvalue off
+  .motor on
+  .override move
+  .keyoverride off
+  .minmax 0 63
+  .tx $F0 val $F7
+$store 1
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 2
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 3
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 4
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 5
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 6
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 7
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 8
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 9
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 10
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 11
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 12
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 13
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 14
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 15
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 16
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 17
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 18
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 19
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 20
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 21
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 22
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 23
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 24
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 25
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 26
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 27
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 28
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 29
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 30
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 31
+$preset
+  .name '                        '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$store 32
+$preset
+  .name 'example #0              '
+  .snapshot off
+  .request off
+  .egroups 4
+  .fkeys on
+  .lock off
+  .init
+$encoder 1 ;A knob #1
+  .showvalue off
+  .mode off
+  .resolution 96 96 96 96
+  .minmax 0 127
+  .tx $F0 val $F7
+$encoder 2 ;A knob #2
+  .showvalue off
+  .mode off
+  .resolution 96 96 96 96
+  .minmax 0 63
+  .tx $F0 val $F7
+$button 1 ;A button #1
+  .showvalue off
+  .mode down
+  .minmax 0 0
+  .tx $F0 val $F7
+$button 2 ;A button #2
+  .showvalue off
+  .mode down
+  .minmax 0 0
+  .tx $F0 val $F7
+$fader 1 ;A fader #1
+  .showvalue off
+  .motor on
+  .override move
+  .keyoverride off
+  .minmax 0 127
+  .tx $F0 val $F7
+$fader 2 ;A fader #2
+  .showvalue off
+  .motor on
+  .override move
+  .keyoverride off
+  .minmax 0 63
+  .tx $F0 val $F7
+$end
